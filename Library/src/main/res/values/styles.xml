@@ -55,4 +55,11 @@
         <item name="android:dividerHeight">0dp</item>
         <item name="android:listSelector">?mdListSelector</item>
     </style>
+
+    <style name="MaterialDialog.Button">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">?mdButtonBackground</item>
+    </style>
 </resources>
