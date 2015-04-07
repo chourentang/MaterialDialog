@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="MaterialDialog">
+        <attr name="mdTextPrimaryColor" format="color|reference" />
+        <attr name="mdTextSecondaryColor" format="color|reference" />
+        <attr name="mdDividerColor" format="color|reference" />
+        <attr name="mdPressedColor" format="color|reference" />
+        <attr name="mdButtonBackground" format="reference" />
+        <attr name="mdListSelector" format="reference" />
+    </declare-styleable>
+</resources>
