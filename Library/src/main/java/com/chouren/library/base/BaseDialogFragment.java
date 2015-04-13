@@ -9,7 +9,6 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.FrameLayout;
@@ -31,6 +30,7 @@ public abstract class BaseDialogFragment extends DialogFragment {
     private int mChoiceMode;
     private int[] mListCheckedItemMultipleIds;
     private AdapterView.OnItemClickListener mOnItemClickListener;
+    private MaterialDialogListener mListener;
 
     @NonNull
     @Override
@@ -82,6 +82,21 @@ public abstract class BaseDialogFragment extends DialogFragment {
         beautifyText(vPositiveButton, mPositiveButtonText, mediumFont);
         beautifyText(vNegativeButton, mNegativeButtonText, mediumFont);
 
+        vPositiveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dismiss();
+                if(mListener != null) mListener.onPositiveButtonClick();
+            }
+        });
+        vNegativeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dismiss();
+                if(mListener != null) mListener.onNegativeButtonClick();
+            }
+        });
+
         return view;
     }
 
@@ -111,14 +126,6 @@ public abstract class BaseDialogFragment extends DialogFragment {
         mListCheckedItemIdx = -1;
     }
 
-    public void setItems(ListAdapter listAdapter, int checkedItemIdx,
-                            final AdapterView.OnItemClickListener listener) {
-        mListAdapter = listAdapter;
-        mOnItemClickListener = listener;
-        mListCheckedItemIdx = checkedItemIdx;
-        mChoiceMode = AbsListView.CHOICE_MODE_NONE;
-    }
-
     public void setView(View view) {
         mCustomView = view;
     }
@@ -132,4 +139,7 @@ public abstract class BaseDialogFragment extends DialogFragment {
         }
     }
 
+    public void setListener(MaterialDialogListener listener) {
+        this.mListener = listener;
+    }
 }

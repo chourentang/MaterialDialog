@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.chouren.library.comm.CheckableLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/MaterialDialog.ListView.Item">
+
+    <RadioButton
+        style="@style/MaterialDialog.ListView.Item.Control" />
+
+    <TextView
+        android:id="@+id/item_text"
+        style="@style/MaterialDialog.TextView.ListItem"/>
+
+</com.chouren.library.comm.CheckableLinearLayout>

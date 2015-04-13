@@ -5,8 +5,10 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AbsListView;
 import android.widget.Button;
 
+import com.chouren.library.fragment.ListMaterialDialog;
 import com.chouren.library.fragment.ProgressMaterialDialog;
 import com.chouren.library.fragment.SimpleMaterialDialog;
 
@@ -20,6 +22,8 @@ public class MainActivity extends ActionBarActivity {
 
         Button b1 = (Button)findViewById(R.id.button1);
         Button b2 = (Button)findViewById(R.id.button2);
+        Button b3 = (Button)findViewById(R.id.button3);
+        Button b4 = (Button)findViewById(R.id.button4);
 
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,6 +47,35 @@ public class MainActivity extends ActionBarActivity {
                         .setMessage("sssssssssssssssssssssssssssssssssssssssssssssssssss")
                         .setCancelable(true)
                         .setCancelOnTouchOutside(true)
+                        .show();
+            }
+        });
+
+        final String[] items = new String[] {"item1", "item1", "item1", "item1", "item1", "item1"};
+        b3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ListMaterialDialog.create(MainActivity.this, getSupportFragmentManager())
+                        .setTitle("Title")
+                        .setItems(items)
+                        .setMode(AbsListView.CHOICE_MODE_SINGLE)
+                        .setCheckedId(1)
+                        .setPositiveText("Ok")
+                        .setNegativeText("CANCEL")
+                        .show();
+            }
+        });
+
+        b4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ListMaterialDialog.create(MainActivity.this, getSupportFragmentManager())
+                        .setTitle("Title")
+                        .setItems(items)
+                        .setMode(AbsListView.CHOICE_MODE_MULTIPLE)
+                        .setItemsChecked(new int[] {1, 2})
+                        .setPositiveText("Ok")
+                        .setNegativeText("CANCEL")
                         .show();
             }
         });

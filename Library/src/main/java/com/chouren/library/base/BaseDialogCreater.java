@@ -12,9 +12,11 @@ public abstract class BaseDialogCreater<T extends BaseDialogCreater> {
     public static final String ARG_NEGATIVE_TEXT = "arg_negative_text";
     public static final String ARG_ITEMS = "arg_items";
     public static final String ARG_ITEMS_CHECKED = "arg_items_checked";
+    public static final String ARG_CHECKED_ID = "ARG_CHECKED_ID";
     public static final String ARG_CANCELABLE = "arg_cancelable";
     public static final String ARG_AUTO_DISMISS = "arg_auto_dismiss";
     public static final String ARG_CANCEL_ON_TOUCH_OUTSIDE = "arg_cancel_on_touch_outside";
+    public static final String ARG_MODE = "arg_mode";
 
     protected boolean mCancelable;
     protected boolean mAutoDismiss;
