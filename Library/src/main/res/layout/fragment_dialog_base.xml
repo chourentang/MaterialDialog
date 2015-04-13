@@ -21,6 +21,8 @@
             android:id="@+id/message"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
             tools:text="Lorem ipsum doler samet Jane is awesome guy and Kaylee is so hot." />
 
         <FrameLayout
@@ -38,6 +40,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
+
+        <Button
+            style="@style/MaterialDialog.Button.Other"
+            android:visibility="invisible"
+            tools:text="other button"/>
 
         <Button
             android:id="@+id/positive"

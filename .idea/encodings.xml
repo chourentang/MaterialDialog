@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/Library/src/main/java/com/chouren/library/base/BaseDialogCreater.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Library/src/main/java/com/chouren/library/base/BaseDialogFragment.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Library/src/main/java/com/chouren/library/base/MaterialDialogListener.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Library/src/main/java/com/chouren/library/fragment/SimpleMaterialDialog.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/chouren/materialdialog/MainActivity.java" charset="UTF-8" />
+  </component>
+</project>

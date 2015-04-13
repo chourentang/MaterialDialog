@@ -1,9 +1,14 @@
 package com.chouren.materialdialog;
 
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+
+import com.chouren.library.fragment.ProgressMaterialDialog;
+import com.chouren.library.fragment.SimpleMaterialDialog;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -12,6 +17,35 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Button b1 = (Button)findViewById(R.id.button1);
+        Button b2 = (Button)findViewById(R.id.button2);
+
+        b1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SimpleMaterialDialog.getCreater(MainActivity.this, getSupportFragmentManager())
+                        .setTitle("Title")
+                        .setMessage("dsjkflllllllllllllllllllllllllllllllllllllllllllllllllll")
+                        .setPositiveText("Confirm")
+                        .setNegativeText("Cancel")
+                        .setCancelable(true)
+                        .setCancelOnTouchOutside(true)
+                        .show();
+            }
+        });
+
+        b2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ProgressMaterialDialog.getCreater(MainActivity.this, getSupportFragmentManager())
+                        .setTitle("Title")
+                        .setMessage("sssssssssssssssssssssssssssssssssssssssssssssssssss")
+                        .setCancelable(true)
+                        .setCancelOnTouchOutside(true)
+                        .show();
+            }
+        });
     }
 
     @Override

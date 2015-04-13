@@ -58,8 +58,21 @@
 
     <style name="MaterialDialog.Button">
         <item name="android:layout_width">0dp</item>
-        <item name="android:layout_weight">1</item>
+        <item name="android:layout_weight">2</item>
         <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">14dp</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:background">?mdButtonBackground</item>
+    </style>
+
+    <style name="MaterialDialog.Button.Other">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">3</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">14dp</item>
+        <item name="android:padding">2dp</item>
+        <item name="android:singleLine">true</item>
         <item name="android:background">?mdButtonBackground</item>
     </style>
 </resources>

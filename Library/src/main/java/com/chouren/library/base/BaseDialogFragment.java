@@ -20,11 +20,11 @@ import android.widget.TextView;
 import com.chouren.library.R;
 import com.chouren.library.comm.TypefaceHelper;
 
-public class BaseDialogFragment extends DialogFragment {
-    private CharSequence mTitle;
+public abstract class BaseDialogFragment extends DialogFragment {
+    protected CharSequence mTitle;
+    protected CharSequence mMessage;
     private CharSequence mPositiveButtonText;
     private CharSequence mNegativeButtonText;
-    private CharSequence mMessage;
     private View mCustomView;
     private ListAdapter mListAdapter;
     private int mListCheckedItemIdx;
@@ -36,11 +36,18 @@ public class BaseDialogFragment extends DialogFragment {
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         Dialog dialog = new Dialog(getActivity(), R.style.MaterialDialog_Dialog);
+        Bundle data = getArguments();
+        boolean cancelable = data.getBoolean(BaseDialogCreater.ARG_CANCELABLE);
+        boolean cancelableTouch = data.getBoolean(BaseDialogCreater.ARG_CANCEL_ON_TOUCH_OUTSIDE);
+        dialog.setCancelable(cancelable);
+        dialog.setCanceledOnTouchOutside(cancelableTouch);
         return dialog;
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        buildDialog();
+
         View view = inflater.inflate(R.layout.fragment_dialog_base, container, false);
         TextView vTitle = (TextView) view.findViewById(R.id.title);
         TextView vMessage = (TextView) view.findViewById(R.id.message);
@@ -77,6 +84,8 @@ public class BaseDialogFragment extends DialogFragment {
 
         return view;
     }
+
+    protected abstract void buildDialog();
 
     public void setTitle(CharSequence title) {
         this.mTitle = title;
